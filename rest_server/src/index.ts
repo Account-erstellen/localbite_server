@@ -1,5 +1,9 @@
 import { Hono } from 'hono'
-//import { sql } from 'bun'
+import 'dotenv/config';
+import { drizzle } from 'drizzle-orm/bun-sql';
+
+const db = drizzle(process.env.DATABASE_URL!);
+
 
 const app = new Hono()
 
